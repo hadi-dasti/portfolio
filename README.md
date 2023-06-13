@@ -1,4 +1,4 @@
-# portfoliO
+# portfolio
 #node.js
 #reactjs
 #express js
