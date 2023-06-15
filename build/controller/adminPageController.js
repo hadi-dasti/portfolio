@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loginAdminController = void 0;
+exports.getAdminController = exports.loginAdminController = void 0;
 const Admin_1 = require("../model/Admin");
 // singUp Admin
 const loginAdminController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -58,3 +58,32 @@ const loginAdminController = (req, res) => __awaiter(void 0, void 0, void 0, fun
     ;
 });
 exports.loginAdminController = loginAdminController;
+// get Amin
+const getAdminController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const getAdmin = yield Admin_1.Admin.find({}, {
+            __v: false,
+            updatedAt: false
+        });
+        if (!getAdmin) {
+            return res.status(404).json({
+                success: false,
+                msg: "Error Not Found"
+            });
+        }
+        ;
+        return res.status(200).json({
+            success: true,
+            data: getAdmin,
+            msg: "Successfully get All Admin"
+        });
+    }
+    catch (err) {
+        return res.status(500).json({
+            success: false,
+            msg: "Internal Server Error" + "&:&" + err.message
+        });
+    }
+    ;
+});
+exports.getAdminController = getAdminController;
