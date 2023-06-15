@@ -53,3 +53,32 @@ export const loginAdminController = async (req: Request, res: Response) => {
         })
     };
 };
+
+// get Amin
+export const getAdminController = async (req: Request, res: Response) => {
+    try {
+        const getAdmin = await Admin.find({}, {
+            __v: false,
+            updatedAt : false
+        });
+
+        if (!getAdmin) {
+            return res.status(404).json({
+                success: false,
+                msg : "Error Not Found"
+            })
+        };
+
+        return res.status(200).json({
+            success: true,
+            data: getAdmin,
+            msg: "Successfully get All Admin"
+        });
+
+    } catch (err: any) {
+        return res.status(500).json({
+            success: false,
+            msg : "Internal Server Error" + "&:&" + err.message
+        })
+    };
+};

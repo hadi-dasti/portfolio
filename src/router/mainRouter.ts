@@ -4,7 +4,7 @@ const router: Router = Router();
 
 // Implementation  Admin portFolio router
 import adminPortfolio from './mainPageRouter/adminPageRouter';
-router.use('/admin', adminPortfolio);
+router.use('/portfolio/admin', adminPortfolio);
 
 
 // Implementation  homepage routers for portfolio
