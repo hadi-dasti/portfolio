@@ -3,10 +3,10 @@ const router: Router = Router();
 
 
 // controller admin 
-import { loginAdminController,getAdminController } from '../../controller/adminPageController';
+import { loginAdminController,getAdminController } from '../../../controller/adminPageController';
 
 // admin validation 
-import { adminValidation } from '../../validation/adminValidator';
+import { adminValidation } from '../../../validation/adminValidator';
 
 // login Router admin
 router.post('/login', adminValidation, loginAdminController);

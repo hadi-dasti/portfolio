@@ -6,7 +6,6 @@ import { join } from 'path';
 
 
 // setup join path as dotenv
-
 dotenv.config({path: join (__dirname,'../../../portfolio/.env') });
 export const JWT_SECRETE = process.env.JWT_SECRETE;
 export const JWT_EXPIRATION_TIME = process.env.JWT_EXPIRATION_TIME;
